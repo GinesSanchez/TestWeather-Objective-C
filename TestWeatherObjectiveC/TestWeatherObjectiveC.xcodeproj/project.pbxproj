@@ -18,6 +18,9 @@
 		75DB9F5424489DEF00A89871 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F5324489DEF00A89871 /* NetworkManager.m */; };
 		75DB9F5524489DEF00A89871 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F5324489DEF00A89871 /* NetworkManager.m */; };
 		75DB9F5B2448A2B300A89871 /* NetWorkManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F5A2448A2B300A89871 /* NetWorkManagerTest.m */; };
+		75DB9F622448B25300A89871 /* CityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F612448B25300A89871 /* CityInfo.m */; };
+		75DB9F632448B25300A89871 /* CityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F612448B25300A89871 /* CityInfo.m */; };
+		75DB9F672448B51A00A89871 /* CityInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F662448B51A00A89871 /* CityInfoTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		75DB9F5224489D6800A89871 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		75DB9F5324489DEF00A89871 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		75DB9F5A2448A2B300A89871 /* NetWorkManagerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkManagerTest.m; sourceTree = "<group>"; };
+		75DB9F602448B23F00A89871 /* CityInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityInfo.h; sourceTree = "<group>"; };
+		75DB9F612448B25300A89871 /* CityInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityInfo.m; sourceTree = "<group>"; };
+		75DB9F662448B51A00A89871 /* CityInfoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityInfoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,31 @@
 			path = NetworkManager;
 			sourceTree = "<group>";
 		};
+		75DB9F5F2448B12B00A89871 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F602448B23F00A89871 /* CityInfo.h */,
+				75DB9F612448B25300A89871 /* CityInfo.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		75DB9F642448B4EE00A89871 /* WeatherManager */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F652448B4F700A89871 /* Models */,
+			);
+			path = WeatherManager;
+			sourceTree = "<group>";
+		};
+		75DB9F652448B4F700A89871 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F662448B51A00A89871 /* CityInfoTests.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -295,6 +326,7 @@
 				75DB9F252448971000A89871 /* AppDelegate.m in Sources */,
 				75DB9F362448971200A89871 /* main.m in Sources */,
 				75DB9F5424489DEF00A89871 /* NetworkManager.m in Sources */,
+				75DB9F622448B25300A89871 /* CityInfo.m in Sources */,
 				75DB9F282448971000A89871 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +337,8 @@
 			files = (
 				75DB9F5524489DEF00A89871 /* NetworkManager.m in Sources */,
 				75DB9F5B2448A2B300A89871 /* NetWorkManagerTest.m in Sources */,
+				75DB9F632448B25300A89871 /* CityInfo.m in Sources */,
+				75DB9F672448B51A00A89871 /* CityInfoTests.m in Sources */,
 				75DB9F402448971200A89871 /* TestWeatherObjectiveCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
