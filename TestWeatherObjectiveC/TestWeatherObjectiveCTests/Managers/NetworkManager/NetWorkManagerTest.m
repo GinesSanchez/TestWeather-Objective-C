@@ -40,4 +40,42 @@ NetworkManager * networkManager;
     XCTAssertTrue([url.query isEqualToString: @"q=Cartagena&units=metric"]);
 }
 
+- (void)testNetworkManager_getJSON_Success {
+    NSURL *url = [networkManager createURLFromParameters: @{ @"q": @"Cartagena",
+                                                             @"APPID": @"13707c65904c020b88624e021a64524d",
+                                                             @"units": @"metric"}];
+
+    XCTestExpectation *expectation = [self expectationWithDescription:@"asynchronous request"];
+
+    [networkManager getJsonWith: url completionHandler:^(NSDictionary *response, NSError *error) {
+        XCTAssertNil(error);
+        XCTAssertNotNil(response);
+
+        [expectation fulfill];
+    }];
+
+    [self waitForExpectationsWithTimeout: 2.0 handler:nil];
+
+}
+
+- (void)testNetworkManager_getJSON_Fail {
+    //TODO: URL as parameter for create URL
+    NSURLComponents *components = [NSURLComponents new];
+    components.scheme = @"https";
+    components.host = @"www.as.com";
+    NSURL *url = components.URL;
+
+    XCTestExpectation *expectation = [self expectationWithDescription:@"asynchronous request"];
+
+    [networkManager getJsonWith: url completionHandler:^(NSDictionary *response, NSError *error) {
+        XCTAssertNotNil(error);
+        XCTAssertNil(response);
+
+        [expectation fulfill];
+    }];
+
+    [self waitForExpectationsWithTimeout: 2.0 handler:nil];
+}
+
+
 @end

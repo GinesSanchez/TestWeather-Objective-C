@@ -32,8 +32,22 @@ NSString * const apiPath = @"/data/2.5/weather/";
     return components.URL;
 }
 
-- (void)getJsonWith:(NSURL *)url completionHandler:(getJsonRequestBlock)completion {
-    //TODO:
+- (void)getJsonWith: (NSURL *)url completionHandler: (getJsonRequestBlock)completion {
+    NSURLSessionTask *task = [NSURLSession.sharedSession dataTaskWithURL: url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (data) {
+            NSError *jsonParsingError = nil;
+            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingFragmentsAllowed error: &jsonParsingError];
+            if (jsonParsingError) {
+                completion(nil, jsonParsingError);
+            } else if (dictionary) {
+                completion(dictionary, nil);
+            }
+        } else {
+            completion(nil, error);
+        }
+    }];
+
+    [task resume];
 }
 
 @end
