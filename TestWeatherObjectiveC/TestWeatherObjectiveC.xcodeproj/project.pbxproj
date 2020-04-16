@@ -113,7 +113,7 @@
 		75DB9F4B2448999000A89871 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				75DB9F4D244899B600A89871 /* DefaultMainView */,
+				75DB9F4E24489A0400A89871 /* Views */,
 				75DB9F4C244899A100A89871 /* AppDelegate */,
 			);
 			path = Source;
@@ -138,6 +138,14 @@
 				75DB9F2C2448971000A89871 /* Main.storyboard */,
 			);
 			path = DefaultMainView;
+			sourceTree = "<group>";
+		};
+		75DB9F4E24489A0400A89871 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F4D244899B600A89871 /* DefaultMainView */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
