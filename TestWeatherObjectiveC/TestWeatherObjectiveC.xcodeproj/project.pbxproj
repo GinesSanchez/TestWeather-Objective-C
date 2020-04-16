@@ -84,14 +84,8 @@
 		75DB9F222448971000A89871 /* TestWeatherObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
-				75DB9F232448971000A89871 /* AppDelegate.h */,
-				75DB9F242448971000A89871 /* AppDelegate.m */,
-				75DB9F262448971000A89871 /* SceneDelegate.h */,
-				75DB9F272448971000A89871 /* SceneDelegate.m */,
-				75DB9F292448971000A89871 /* ViewController.h */,
-				75DB9F2A2448971000A89871 /* ViewController.m */,
-				75DB9F2C2448971000A89871 /* Main.storyboard */,
-				75DB9F2F2448971200A89871 /* Assets.xcassets */,
+				75DB9F4B2448999000A89871 /* Source */,
+				75DB9F4A2448998100A89871 /* Resources */,
 				75DB9F312448971200A89871 /* LaunchScreen.storyboard */,
 				75DB9F342448971200A89871 /* Info.plist */,
 				75DB9F352448971200A89871 /* main.m */,
@@ -106,6 +100,44 @@
 				75DB9F412448971200A89871 /* Info.plist */,
 			);
 			path = TestWeatherObjectiveCTests;
+			sourceTree = "<group>";
+		};
+		75DB9F4A2448998100A89871 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F2F2448971200A89871 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		75DB9F4B2448999000A89871 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F4D244899B600A89871 /* DefaultMainView */,
+				75DB9F4C244899A100A89871 /* AppDelegate */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		75DB9F4C244899A100A89871 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F232448971000A89871 /* AppDelegate.h */,
+				75DB9F242448971000A89871 /* AppDelegate.m */,
+				75DB9F262448971000A89871 /* SceneDelegate.h */,
+				75DB9F272448971000A89871 /* SceneDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		75DB9F4D244899B600A89871 /* DefaultMainView */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F292448971000A89871 /* ViewController.h */,
+				75DB9F2A2448971000A89871 /* ViewController.m */,
+				75DB9F2C2448971000A89871 /* Main.storyboard */,
+			);
+			path = DefaultMainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
