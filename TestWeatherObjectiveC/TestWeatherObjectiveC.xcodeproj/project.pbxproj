@@ -21,6 +21,9 @@
 		75DB9F622448B25300A89871 /* CityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F612448B25300A89871 /* CityInfo.m */; };
 		75DB9F632448B25300A89871 /* CityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F612448B25300A89871 /* CityInfo.m */; };
 		75DB9F672448B51A00A89871 /* CityInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F662448B51A00A89871 /* CityInfoTests.m */; };
+		75DB9F712448D8CA00A89871 /* NSError+WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F702448D8CA00A89871 /* NSError+WeatherManager.m */; };
+		75DB9F752448DD5300A89871 /* NSError+WeatherManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F742448DD5300A89871 /* NSError+WeatherManagerTests.m */; };
+		75DB9F762448DDAF00A89871 /* NSError+WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F702448D8CA00A89871 /* NSError+WeatherManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		75DB9F602448B23F00A89871 /* CityInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityInfo.h; sourceTree = "<group>"; };
 		75DB9F612448B25300A89871 /* CityInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityInfo.m; sourceTree = "<group>"; };
 		75DB9F662448B51A00A89871 /* CityInfoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityInfoTests.m; sourceTree = "<group>"; };
+		75DB9F6F2448D79B00A89871 /* NSError+WeatherManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+WeatherManager.h"; sourceTree = "<group>"; };
+		75DB9F702448D8CA00A89871 /* NSError+WeatherManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+WeatherManager.m"; sourceTree = "<group>"; };
+		75DB9F742448DD5300A89871 /* NSError+WeatherManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+WeatherManagerTests.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,7 @@
 		75DB9F642448B4EE00A89871 /* WeatherManager */ = {
 			isa = PBXGroup;
 			children = (
+				75DB9F732448DD3200A89871 /* Errors */,
 				75DB9F652448B4F700A89871 /* Models */,
 			);
 			path = WeatherManager;
@@ -220,6 +227,23 @@
 				75DB9F662448B51A00A89871 /* CityInfoTests.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		75DB9F6E2448D75400A89871 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F6F2448D79B00A89871 /* NSError+WeatherManager.h */,
+				75DB9F702448D8CA00A89871 /* NSError+WeatherManager.m */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		75DB9F732448DD3200A89871 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F742448DD5300A89871 /* NSError+WeatherManagerTests.m */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +350,7 @@
 				75DB9F252448971000A89871 /* AppDelegate.m in Sources */,
 				75DB9F362448971200A89871 /* main.m in Sources */,
 				75DB9F5424489DEF00A89871 /* NetworkManager.m in Sources */,
+				75DB9F712448D8CA00A89871 /* NSError+WeatherManager.m in Sources */,
 				75DB9F622448B25300A89871 /* CityInfo.m in Sources */,
 				75DB9F282448971000A89871 /* SceneDelegate.m in Sources */,
 			);
@@ -338,6 +363,8 @@
 				75DB9F5524489DEF00A89871 /* NetworkManager.m in Sources */,
 				75DB9F5B2448A2B300A89871 /* NetWorkManagerTest.m in Sources */,
 				75DB9F632448B25300A89871 /* CityInfo.m in Sources */,
+				75DB9F762448DDAF00A89871 /* NSError+WeatherManager.m in Sources */,
+				75DB9F752448DD5300A89871 /* NSError+WeatherManagerTests.m in Sources */,
 				75DB9F672448B51A00A89871 /* CityInfoTests.m in Sources */,
 				75DB9F402448971200A89871 /* TestWeatherObjectiveCTests.m in Sources */,
 			);
