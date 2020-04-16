@@ -15,7 +15,6 @@
 @property (nonatomic) NSNumber *currentTemp;
 @property (nonatomic) NSNumber *maxTemp;
 @property (nonatomic) NSNumber *minTemp;
-@property (nonatomic) NSString *weatherDescription;
 
 -(instancetype) initWithDictionary: (NSDictionary *) dictionary;
 

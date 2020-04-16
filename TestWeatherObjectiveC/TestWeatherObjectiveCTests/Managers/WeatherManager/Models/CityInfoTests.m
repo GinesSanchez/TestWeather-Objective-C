@@ -31,12 +31,6 @@
                                            @"temp": @32,
                                            @"temp_max": @32,
                                            @"temp_min": @32,
-                                    },
-                                    @"weather": @{
-                                           @"description": @"clear sky",
-                                           @"icon": @"01d",
-                                           @"id": @800,
-                                           @"main": @"Clear",
                                     }
     };
 
@@ -49,7 +43,6 @@
     XCTAssertTrue([@32 isEqualToNumber: cityInfo.currentTemp]);
     XCTAssertTrue([@32 isEqualToNumber:  cityInfo.maxTemp]);
     XCTAssertTrue([@32 isEqualToNumber:  cityInfo.minTemp]);
-    XCTAssertTrue([@"clear sky" isEqualToString: cityInfo.weatherDescription]);
 }
 
 - (void)testCityInfo_InitWithDictionary_Fail {

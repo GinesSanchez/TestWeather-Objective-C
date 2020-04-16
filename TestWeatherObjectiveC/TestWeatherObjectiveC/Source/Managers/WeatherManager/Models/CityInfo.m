@@ -13,23 +13,20 @@
 -(instancetype) initWithDictionary: (NSDictionary *) dictionary {
     self = [super init];
     NSDictionary * mainDictionary = dictionary[@"main"];
-    NSDictionary * weatherDictionary = dictionary[@"weather"];
 
-    if (self && mainDictionary && weatherDictionary) {
+    if (self && mainDictionary ) {
         NSString *feelsLike = mainDictionary[@"feels_like"];
-        NSString *humidity = mainDictionary[@"humidity"];
-        NSString *currentTemp = mainDictionary[@"temp"];
-        NSString *maxTemp = mainDictionary[@"temp_max"];
-        NSString *minTemp = mainDictionary[@"temp_min"];
-        NSString *description = weatherDictionary[@"description"];
+        NSNumber *humidity = mainDictionary[@"humidity"];
+        NSNumber *currentTemp = mainDictionary[@"temp"];
+        NSNumber *maxTemp = mainDictionary[@"temp_max"];
+        NSNumber *minTemp = mainDictionary[@"temp_min"];
 
-        if (feelsLike && humidity && currentTemp && maxTemp && minTemp && description) {
+        if (feelsLike && humidity && currentTemp && maxTemp && minTemp) {
             self.feelsLike = feelsLike;
             self.humidity = humidity;
             self.currentTemp = currentTemp;
             self.maxTemp = maxTemp;
             self.minTemp = minTemp;
-            self.weatherDescription = description;
             return self;
         }
     }
