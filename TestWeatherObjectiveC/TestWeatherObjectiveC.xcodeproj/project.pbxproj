@@ -15,6 +15,9 @@
 		75DB9F332448971200A89871 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75DB9F312448971200A89871 /* LaunchScreen.storyboard */; };
 		75DB9F362448971200A89871 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F352448971200A89871 /* main.m */; };
 		75DB9F402448971200A89871 /* TestWeatherObjectiveCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F3F2448971200A89871 /* TestWeatherObjectiveCTests.m */; };
+		75DB9F5424489DEF00A89871 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F5324489DEF00A89871 /* NetworkManager.m */; };
+		75DB9F5524489DEF00A89871 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F5324489DEF00A89871 /* NetworkManager.m */; };
+		75DB9F5B2448A2B300A89871 /* NetWorkManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F5A2448A2B300A89871 /* NetWorkManagerTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,10 @@
 		75DB9F3B2448971200A89871 /* TestWeatherObjectiveCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestWeatherObjectiveCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DB9F3F2448971200A89871 /* TestWeatherObjectiveCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestWeatherObjectiveCTests.m; sourceTree = "<group>"; };
 		75DB9F412448971200A89871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75DB9F5124489B0700A89871 /* NetworkManagerType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManagerType.h; sourceTree = "<group>"; };
+		75DB9F5224489D6800A89871 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		75DB9F5324489DEF00A89871 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		75DB9F5A2448A2B300A89871 /* NetWorkManagerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkManagerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +103,7 @@
 		75DB9F3E2448971200A89871 /* TestWeatherObjectiveCTests */ = {
 			isa = PBXGroup;
 			children = (
+				75DB9F562448A1A600A89871 /* Managers */,
 				75DB9F3F2448971200A89871 /* TestWeatherObjectiveCTests.m */,
 				75DB9F412448971200A89871 /* Info.plist */,
 			);
@@ -113,6 +121,7 @@
 		75DB9F4B2448999000A89871 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				75DB9F4F24489A9700A89871 /* Managers */,
 				75DB9F4E24489A0400A89871 /* Views */,
 				75DB9F4C244899A100A89871 /* AppDelegate */,
 			);
@@ -146,6 +155,40 @@
 				75DB9F4D244899B600A89871 /* DefaultMainView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		75DB9F4F24489A9700A89871 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F5024489AA000A89871 /* NetworkManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		75DB9F5024489AA000A89871 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F5124489B0700A89871 /* NetworkManagerType.h */,
+				75DB9F5224489D6800A89871 /* NetworkManager.h */,
+				75DB9F5324489DEF00A89871 /* NetworkManager.m */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		75DB9F562448A1A600A89871 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F572448A1AC00A89871 /* NetworkManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		75DB9F572448A1AC00A89871 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F5A2448A2B300A89871 /* NetWorkManagerTest.m */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +294,7 @@
 				75DB9F2B2448971000A89871 /* ViewController.m in Sources */,
 				75DB9F252448971000A89871 /* AppDelegate.m in Sources */,
 				75DB9F362448971200A89871 /* main.m in Sources */,
+				75DB9F5424489DEF00A89871 /* NetworkManager.m in Sources */,
 				75DB9F282448971000A89871 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75DB9F5524489DEF00A89871 /* NetworkManager.m in Sources */,
+				75DB9F5B2448A2B300A89871 /* NetWorkManagerTest.m in Sources */,
 				75DB9F402448971200A89871 /* TestWeatherObjectiveCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
