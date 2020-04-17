@@ -7,10 +7,14 @@
 //
 
 #import "WeatherViewModel.h"
+#import "ViewModelState.h"
 
 @interface WeatherViewModel ()
 
 @property (nonatomic) id <WeatherManagerType> weatherManager;
+@property (nonatomic) ViewModelState viewModelState;
+@property (nonatomic) CityInfo * cityInfo;
+@property (nonatomic) NSError * requestError;
 
 @end
 
@@ -25,8 +29,62 @@
     if (self) {
         self.viewController = viewController;
         self.weatherManager = weatherManager;
+        self.viewModelState = loading;
+        self.cityInfo = nil;
+        self.requestError = nil;
     }
     return self;
+}
+
+//MARK: - didSet
+-(void) setViewModelState:(ViewModelState) viewModelState {
+    _viewModelState = viewModelState;
+    [self.viewController viewModelStateUpdated];
+}
+
+-(void) setCityInfo:(CityInfo *)cityInfo {
+    _cityInfo = cityInfo;
+    self.viewModelState = ready;
+}
+
+-(void) setRequestError:(NSError *) requestError {
+    _requestError = requestError;
+    self.viewModelState = stateError;
+}
+
+
+//MARK: - WeatherViewModelDelegate
+- (void) viewLoaded {
+    [self getCityInformation];
+}
+
+-(NSString *) titleText {
+    return @"Weather App";
+}
+
+-(NSString *) cityWeatherInfo {
+    switch (self.viewModelState) {
+        case loading:
+            return @"Loading...";
+        case ready:
+            return [NSString stringWithFormat: @"%@ temperature: %@ Cº", @"Cartagena", self.cityInfo.currentTemp];
+        case stateError:
+            return @"There was an error getting the temperature information";
+        default:
+            return @"Not available";
+    }
+}
+
+//MARK: - Private methods
+-(void) getCityInformation {
+    self.viewModelState = loading;
+    [self.weatherManager getInformationInCelsiusFromCity:@"Cartagena" completionHandler: ^(CityInfo *cityInfo, NSError *error) {
+        if (cityInfo) {
+            self.cityInfo = cityInfo;
+        } else {            
+            self.requestError = error;
+        }
+    }];
 }
 
 @end

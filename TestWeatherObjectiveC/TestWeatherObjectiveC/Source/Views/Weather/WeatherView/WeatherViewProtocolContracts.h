@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @protocol WeatherViewModelDelegate <NSObject>
-//TODO:
+
+-(void) viewLoaded;
+-(NSString *) titleText;
+-(NSString *) cityWeatherInfo;
+
 @end
 
 @protocol WeatherViewControllerDelegate <NSObject>
-//TODO:
+-(void) viewModelStateUpdated;
 @end

@@ -10,23 +10,44 @@
 
 @interface WeatherViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cityTemperatureInfoLabel;
+
 @end
 
 @implementation WeatherViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    [self setUp];
+    [self.viewModel viewLoaded];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//MARK: - WeatherViewControllerDelegate
+- (void)viewModelStateUpdated {
+    [self reloadView];
 }
-*/
+
+//MARK: - Helper methods
+-(void) setUp {
+    [self setUpLabels];
+    [self setUpNavigationBar];
+}
+
+-(void) setUpLabels {
+    self.titleLabel.text = [self.viewModel titleText];
+    self.cityTemperatureInfoLabel.text = [self.viewModel cityWeatherInfo];
+}
+
+-(void) setUpNavigationBar {
+    [self.navigationController setNavigationBarHidden: YES animated: NO];
+}
+
+-(void) reloadView {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.cityTemperatureInfoLabel.text = [self.viewModel cityWeatherInfo];
+    });
+}
 
 @end

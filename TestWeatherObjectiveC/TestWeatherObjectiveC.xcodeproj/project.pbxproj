@@ -66,6 +66,7 @@
 		7538AC33244A18B800E367E6 /* WeatherViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherViewModel.h; sourceTree = "<group>"; };
 		7538AC34244A18B800E367E6 /* WeatherViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherViewModel.m; sourceTree = "<group>"; };
 		7538AC38244A1AFB00E367E6 /* WeatherViewProtocolContracts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherViewProtocolContracts.h; sourceTree = "<group>"; };
+		7538AC3A244A272F00E367E6 /* ViewModelState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewModelState.h; sourceTree = "<group>"; };
 		75DB9F202448971000A89871 /* TestWeatherObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWeatherObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DB9F232448971000A89871 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		75DB9F242448971000A89871 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,12 +126,12 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		7538AC17244A052D00E367E6 /* CommonProtocols */ = {
+		7538AC17244A052D00E367E6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				7538AC18244A053E00E367E6 /* Coordinating.h */,
 			);
-			path = CommonProtocols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		7538AC24244A0E4600E367E6 /* Factories */ = {
@@ -164,6 +165,14 @@
 				7538AC38244A1AFB00E367E6 /* WeatherViewProtocolContracts.h */,
 			);
 			path = WeatherView;
+			sourceTree = "<group>";
+		};
+		7538AC39244A271F00E367E6 /* StateEnums */ = {
+			isa = PBXGroup;
+			children = (
+				7538AC3A244A272F00E367E6 /* ViewModelState.h */,
+			);
+			path = StateEnums;
 			sourceTree = "<group>";
 		};
 		75DB9F172448971000A89871 = {
@@ -217,7 +226,8 @@
 		75DB9F4B2448999000A89871 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7538AC17244A052D00E367E6 /* CommonProtocols */,
+				7538AC39244A271F00E367E6 /* StateEnums */,
+				7538AC17244A052D00E367E6 /* Protocols */,
 				75DB9F4F24489A9700A89871 /* Managers */,
 				7538AC24244A0E4600E367E6 /* Factories */,
 				75DB9F4E24489A0400A89871 /* Views */,

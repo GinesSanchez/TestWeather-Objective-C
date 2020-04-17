@@ -19,7 +19,7 @@
     AppContext *appContext = [AppContext new];
     appContext.navigationController = [UINavigationController new];
     appContext.moduleFactory = [ModuleFactory new];
-    appContext.weatherManager = [WeatherManager new];
+    appContext.weatherManager = [WeatherManager weatherManagerWithNetworkManager];
     return appContext;
 }
 
