@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7538AC142449F39900E367E6 /* MockNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC132449F39900E367E6 /* MockNetworkManager.m */; };
 		75DB9F252448971000A89871 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F242448971000A89871 /* AppDelegate.m */; };
 		75DB9F282448971000A89871 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F272448971000A89871 /* SceneDelegate.m */; };
 		75DB9F2B2448971000A89871 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F2A2448971000A89871 /* ViewController.m */; };
@@ -21,9 +22,12 @@
 		75DB9F622448B25300A89871 /* CityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F612448B25300A89871 /* CityInfo.m */; };
 		75DB9F632448B25300A89871 /* CityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F612448B25300A89871 /* CityInfo.m */; };
 		75DB9F672448B51A00A89871 /* CityInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F662448B51A00A89871 /* CityInfoTests.m */; };
+		75DB9F6A2448C24E00A89871 /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F692448C24E00A89871 /* WeatherManager.m */; };
+		75DB9F6B2448C24E00A89871 /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F692448C24E00A89871 /* WeatherManager.m */; };
 		75DB9F712448D8CA00A89871 /* NSError+WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F702448D8CA00A89871 /* NSError+WeatherManager.m */; };
 		75DB9F752448DD5300A89871 /* NSError+WeatherManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F742448DD5300A89871 /* NSError+WeatherManagerTests.m */; };
 		75DB9F762448DDAF00A89871 /* NSError+WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F702448D8CA00A89871 /* NSError+WeatherManager.m */; };
+		75DB9F782448E08700A89871 /* WeatherManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F772448E08700A89871 /* WeatherManagerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7538AC122449F39900E367E6 /* MockNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockNetworkManager.h; sourceTree = "<group>"; };
+		7538AC132449F39900E367E6 /* MockNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockNetworkManager.m; sourceTree = "<group>"; };
 		75DB9F202448971000A89871 /* TestWeatherObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWeatherObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DB9F232448971000A89871 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		75DB9F242448971000A89871 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,12 +62,17 @@
 		75DB9F5224489D6800A89871 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		75DB9F5324489DEF00A89871 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		75DB9F5A2448A2B300A89871 /* NetWorkManagerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkManagerTest.m; sourceTree = "<group>"; };
+		75DB9F5D2448AE9F00A89871 /* WeatherManagerType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherManagerType.h; sourceTree = "<group>"; };
+		75DB9F5E2448AFF300A89871 /* CompletionHandlerTypeDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompletionHandlerTypeDefs.h; sourceTree = "<group>"; };
 		75DB9F602448B23F00A89871 /* CityInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityInfo.h; sourceTree = "<group>"; };
 		75DB9F612448B25300A89871 /* CityInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityInfo.m; sourceTree = "<group>"; };
 		75DB9F662448B51A00A89871 /* CityInfoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityInfoTests.m; sourceTree = "<group>"; };
+		75DB9F682448C20500A89871 /* WeatherManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherManager.h; sourceTree = "<group>"; };
+		75DB9F692448C24E00A89871 /* WeatherManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherManager.m; sourceTree = "<group>"; };
 		75DB9F6F2448D79B00A89871 /* NSError+WeatherManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+WeatherManager.h"; sourceTree = "<group>"; };
 		75DB9F702448D8CA00A89871 /* NSError+WeatherManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+WeatherManager.m"; sourceTree = "<group>"; };
 		75DB9F742448DD5300A89871 /* NSError+WeatherManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+WeatherManagerTests.m"; sourceTree = "<group>"; };
+		75DB9F772448E08700A89871 /* WeatherManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherManagerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7538AC112449F37800E367E6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7538AC122449F39900E367E6 /* MockNetworkManager.h */,
+				7538AC132449F39900E367E6 /* MockNetworkManager.m */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		75DB9F172448971000A89871 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +192,8 @@
 		75DB9F4F24489A9700A89871 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				75DB9F5E2448AFF300A89871 /* CompletionHandlerTypeDefs.h */,
+				75DB9F5C2448AE7E00A89871 /* WeatherManager */,
 				75DB9F5024489AA000A89871 /* NetworkManager */,
 			);
 			path = Managers;
@@ -190,6 +212,8 @@
 		75DB9F562448A1A600A89871 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				7538AC112449F37800E367E6 /* Mocks */,
+				75DB9F642448B4EE00A89871 /* WeatherManager */,
 				75DB9F572448A1AC00A89871 /* NetworkManager */,
 			);
 			path = Managers;
@@ -201,6 +225,18 @@
 				75DB9F5A2448A2B300A89871 /* NetWorkManagerTest.m */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		75DB9F5C2448AE7E00A89871 /* WeatherManager */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9F6E2448D75400A89871 /* Errors */,
+				75DB9F5F2448B12B00A89871 /* Models */,
+				75DB9F5D2448AE9F00A89871 /* WeatherManagerType.h */,
+				75DB9F682448C20500A89871 /* WeatherManager.h */,
+				75DB9F692448C24E00A89871 /* WeatherManager.m */,
+			);
+			path = WeatherManager;
 			sourceTree = "<group>";
 		};
 		75DB9F5F2448B12B00A89871 /* Models */ = {
@@ -217,6 +253,7 @@
 			children = (
 				75DB9F732448DD3200A89871 /* Errors */,
 				75DB9F652448B4F700A89871 /* Models */,
+				75DB9F772448E08700A89871 /* WeatherManagerTests.m */,
 			);
 			path = WeatherManager;
 			sourceTree = "<group>";
@@ -353,6 +390,7 @@
 				75DB9F712448D8CA00A89871 /* NSError+WeatherManager.m in Sources */,
 				75DB9F622448B25300A89871 /* CityInfo.m in Sources */,
 				75DB9F282448971000A89871 /* SceneDelegate.m in Sources */,
+				75DB9F6A2448C24E00A89871 /* WeatherManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,11 +398,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7538AC142449F39900E367E6 /* MockNetworkManager.m in Sources */,
 				75DB9F5524489DEF00A89871 /* NetworkManager.m in Sources */,
 				75DB9F5B2448A2B300A89871 /* NetWorkManagerTest.m in Sources */,
+				75DB9F6B2448C24E00A89871 /* WeatherManager.m in Sources */,
 				75DB9F632448B25300A89871 /* CityInfo.m in Sources */,
 				75DB9F762448DDAF00A89871 /* NSError+WeatherManager.m in Sources */,
 				75DB9F752448DD5300A89871 /* NSError+WeatherManagerTests.m in Sources */,
+				75DB9F782448E08700A89871 /* WeatherManagerTests.m in Sources */,
 				75DB9F672448B51A00A89871 /* CityInfoTests.m in Sources */,
 				75DB9F402448971200A89871 /* TestWeatherObjectiveCTests.m in Sources */,
 			);

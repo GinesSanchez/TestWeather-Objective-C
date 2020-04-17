@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CompletionHandlerTypeDefs.h"
 
 @protocol NetworkManagerType <NSObject>
-
-typedef void(^getJsonRequestBlock)(NSDictionary *response, NSError *error);
 
 /// Retrives a URL
 ///
