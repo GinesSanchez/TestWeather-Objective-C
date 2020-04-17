@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeatherViewProtocolContracts.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@interface WeatherViewController : UIViewController <WeatherViewControllerDelegate>
 
-@interface WeatherViewController : UIViewController
+@property (nonatomic) id <WeatherViewModelDelegate> viewModel;
 
 @end
 
-NS_ASSUME_NONNULL_END

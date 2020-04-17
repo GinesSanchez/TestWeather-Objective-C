@@ -14,7 +14,7 @@
 
 @property (nonatomic) id<AppContextType> appContext;
 
-+ (instancetype)appCoordinatorWithAppContext:(id<AppContextType>) appContext;
++ (instancetype)appCoordinatorWithAppContext: (id<AppContextType>) appContext;
 
 @end
 

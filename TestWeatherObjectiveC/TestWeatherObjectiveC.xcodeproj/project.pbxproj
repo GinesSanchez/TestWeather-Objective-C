@@ -14,6 +14,7 @@
 		7538AC2C244A119000E367E6 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC2A244A119000E367E6 /* WeatherViewController.m */; };
 		7538AC2D244A119000E367E6 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7538AC2B244A119000E367E6 /* WeatherViewController.xib */; };
 		7538AC30244A128400E367E6 /* WeatherCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC2F244A128400E367E6 /* WeatherCoordinator.m */; };
+		7538AC35244A18B800E367E6 /* WeatherViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC34244A18B800E367E6 /* WeatherViewModel.m */; };
 		75DB9F252448971000A89871 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F242448971000A89871 /* AppDelegate.m */; };
 		75DB9F282448971000A89871 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F272448971000A89871 /* SceneDelegate.m */; };
 		75DB9F2B2448971000A89871 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F2A2448971000A89871 /* ViewController.m */; };
@@ -62,6 +63,9 @@
 		7538AC2E244A128400E367E6 /* WeatherCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCoordinator.h; sourceTree = "<group>"; };
 		7538AC2F244A128400E367E6 /* WeatherCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherCoordinator.m; sourceTree = "<group>"; };
 		7538AC32244A151100E367E6 /* ViewHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewHeaders.h; sourceTree = "<group>"; };
+		7538AC33244A18B800E367E6 /* WeatherViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherViewModel.h; sourceTree = "<group>"; };
+		7538AC34244A18B800E367E6 /* WeatherViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherViewModel.m; sourceTree = "<group>"; };
+		7538AC38244A1AFB00E367E6 /* WeatherViewProtocolContracts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherViewProtocolContracts.h; sourceTree = "<group>"; };
 		75DB9F202448971000A89871 /* TestWeatherObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWeatherObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DB9F232448971000A89871 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		75DB9F242448971000A89871 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -152,9 +156,12 @@
 		7538AC31244A12EF00E367E6 /* WeatherView */ = {
 			isa = PBXGroup;
 			children = (
+				7538AC33244A18B800E367E6 /* WeatherViewModel.h */,
+				7538AC34244A18B800E367E6 /* WeatherViewModel.m */,
 				7538AC29244A119000E367E6 /* WeatherViewController.h */,
 				7538AC2A244A119000E367E6 /* WeatherViewController.m */,
 				7538AC2B244A119000E367E6 /* WeatherViewController.xib */,
+				7538AC38244A1AFB00E367E6 /* WeatherViewProtocolContracts.h */,
 			);
 			path = WeatherView;
 			sourceTree = "<group>";
@@ -210,9 +217,9 @@
 		75DB9F4B2448999000A89871 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7538AC24244A0E4600E367E6 /* Factories */,
 				7538AC17244A052D00E367E6 /* CommonProtocols */,
 				75DB9F4F24489A9700A89871 /* Managers */,
+				7538AC24244A0E4600E367E6 /* Factories */,
 				75DB9F4E24489A0400A89871 /* Views */,
 				75DB9F4C244899A100A89871 /* AppDelegate */,
 			);
@@ -453,6 +460,7 @@
 				75DB9F252448971000A89871 /* AppDelegate.m in Sources */,
 				7538AC27244A0E7400E367E6 /* ModuleFactory.m in Sources */,
 				7538AC1E244A05B800E367E6 /* AppCoordinator.m in Sources */,
+				7538AC35244A18B800E367E6 /* WeatherViewModel.m in Sources */,
 				7538AC1B244A057D00E367E6 /* AppContext.m in Sources */,
 				75DB9F362448971200A89871 /* main.m in Sources */,
 				75DB9F5424489DEF00A89871 /* NetworkManager.m in Sources */,

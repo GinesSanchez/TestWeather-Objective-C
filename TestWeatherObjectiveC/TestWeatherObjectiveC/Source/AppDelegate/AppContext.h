@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ModuleFactory.h"
+#import "WeatherManagerType.h"
 
 @protocol AppContextType <NSObject>
 
@@ -16,6 +17,7 @@
 
 @property (nonatomic, retain) UINavigationController *navigationController;
 @property (nonatomic, retain) ModuleFactory *moduleFactory;
+@property (nonatomic) id <WeatherManagerType> weatherManager;
 
 @end
 

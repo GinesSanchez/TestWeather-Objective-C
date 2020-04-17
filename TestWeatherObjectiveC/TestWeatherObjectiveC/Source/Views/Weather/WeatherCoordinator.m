@@ -28,7 +28,7 @@
 
 
 - (void)start {
-    self.weatherViewController = [self.appContext.moduleFactory createWeatherViewModule];
+    self.weatherViewController = [self.appContext.moduleFactory createWeatherViewModuleWithWeatherManager: self.appContext.weatherManager];
     [self.navigationController pushViewController: self.weatherViewController animated: YES];
 }
 

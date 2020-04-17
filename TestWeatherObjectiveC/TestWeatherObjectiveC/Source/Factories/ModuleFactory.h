@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "ViewHeaders.h"
+#import "WeatherManagerType.h"
 
 @interface ModuleFactory : NSObject
 
--(WeatherViewController *) createWeatherViewModule;
+-(WeatherViewController *) createWeatherViewModuleWithWeatherManager: (id <WeatherManagerType>) weatherManager;
 
 @end
