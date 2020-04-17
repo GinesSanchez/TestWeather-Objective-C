@@ -9,7 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherViewController">
             <connections>
+                <outlet property="blueCircleImageView" destination="S5V-ld-5Y3" id="Cjh-ms-JWI"/>
                 <outlet property="cityTemperatureInfoLabel" destination="fhh-iR-q1d" id="QQy-UV-I8X"/>
+                <outlet property="greenCircleImageView" destination="6go-r4-6C4" id="anO-FT-f5I"/>
+                <outlet property="tapMeButton" destination="GBl-yj-6j0" id="iAi-OL-nCe"/>
                 <outlet property="titleLabel" destination="RJu-ac-m9e" id="Jvk-sn-swB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,14 +39,58 @@
                         </label>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBl-yj-6j0">
+                    <rect key="frame" x="103.5" y="349.5" width="207" height="207"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="GBl-yj-6j0" secondAttribute="height" multiplier="1:1" id="bnU-hf-hQL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <state key="normal" title="_Tap Me!">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWR-sJ-nrd">
+                    <rect key="frame" x="52" y="610" width="310.5" height="120"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6go-r4-6C4">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="6go-r4-6C4" secondAttribute="height" multiplier="1:1" id="ZQF-pm-wcR"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S5V-ld-5Y3">
+                            <rect key="frame" x="190.5" y="0.0" width="120" height="120"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="S5V-ld-5Y3" secondAttribute="trailing" id="9mS-tZ-XqU"/>
+                        <constraint firstItem="6go-r4-6C4" firstAttribute="top" secondItem="FWR-sJ-nrd" secondAttribute="top" id="K9Q-Uu-qZf"/>
+                        <constraint firstItem="S5V-ld-5Y3" firstAttribute="top" secondItem="FWR-sJ-nrd" secondAttribute="top" id="Kjg-og-45z"/>
+                        <constraint firstItem="6go-r4-6C4" firstAttribute="centerY" secondItem="FWR-sJ-nrd" secondAttribute="centerY" id="Rde-qE-nZz"/>
+                        <constraint firstItem="S5V-ld-5Y3" firstAttribute="width" secondItem="6go-r4-6C4" secondAttribute="width" id="Xta-B9-YZF"/>
+                        <constraint firstItem="S5V-ld-5Y3" firstAttribute="height" secondItem="6go-r4-6C4" secondAttribute="height" id="fA7-ib-Bhf"/>
+                        <constraint firstItem="6go-r4-6C4" firstAttribute="leading" secondItem="FWR-sJ-nrd" secondAttribute="leading" id="r1O-oC-Qr1"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="FWR-sJ-nrd" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" constant="217" id="4Xr-AK-2hM"/>
                 <constraint firstItem="mHN-GL-BWr" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="AWj-bF-2wB"/>
+                <constraint firstItem="GBl-yj-6j0" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="AxG-bi-DiA"/>
+                <constraint firstItem="GBl-yj-6j0" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="E13-if-5n2"/>
+                <constraint firstItem="FWR-sJ-nrd" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="RBI-6h-7gL"/>
+                <constraint firstItem="FWR-sJ-nrd" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.75" id="m2B-bZ-sxc"/>
+                <constraint firstItem="GBl-yj-6j0" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="meZ-gT-lLi"/>
                 <constraint firstItem="mHN-GL-BWr" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" multiplier="0.4" id="mnG-HN-iX3"/>
+                <constraint firstItem="FWR-sJ-nrd" firstAttribute="height" secondItem="GBl-yj-6j0" secondAttribute="height" multiplier="0.64" constant="-12.47999999999999" id="wGN-TR-iqZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="139" y="154"/>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
 </document>

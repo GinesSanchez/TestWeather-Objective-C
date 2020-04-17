@@ -12,6 +12,7 @@
 
 -(void) viewLoaded;
 -(NSString *) titleText;
+-(NSString *) tapMeButtonTitle;
 -(NSString *) cityWeatherInfo;
 
 @end

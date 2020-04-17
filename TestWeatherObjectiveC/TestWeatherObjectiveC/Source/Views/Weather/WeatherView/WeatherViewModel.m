@@ -62,6 +62,10 @@
     return @"Weather App";
 }
 
+-(NSString *) tapMeButtonTitle {
+    return @"Tap Me!";
+}
+
 -(NSString *) cityWeatherInfo {
     switch (self.viewModelState) {
         case loading:

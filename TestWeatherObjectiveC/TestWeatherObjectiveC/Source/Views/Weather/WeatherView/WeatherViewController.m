@@ -13,6 +13,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityTemperatureInfoLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *tapMeButton;
+
+@property (weak, nonatomic) IBOutlet UIImageView *greenCircleImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *blueCircleImageView;
+
 @end
 
 @implementation WeatherViewController
@@ -33,6 +38,8 @@
 -(void) setUp {
     [self setUpLabels];
     [self setUpNavigationBar];
+    [self setUpButtons];
+    [self setUpImages];
 }
 
 -(void) setUpLabels {
@@ -42,6 +49,16 @@
 
 -(void) setUpNavigationBar {
     [self.navigationController setNavigationBarHidden: YES animated: NO];
+}
+
+-(void) setUpButtons {
+    [self.tapMeButton setTitle: [self.viewModel tapMeButtonTitle] forState: UIControlStateNormal];
+    [self.tapMeButton setBackgroundImage: [UIImage imageNamed: @"redCircleImage"] forState: UIControlStateNormal];
+}
+
+-(void) setUpImages {
+    [self.greenCircleImageView setImage: [UIImage imageNamed: @"greenCircleImage"]];
+    [self.blueCircleImageView setImage: [UIImage imageNamed: @"blueCircleImage"]];
 }
 
 -(void) reloadView {
