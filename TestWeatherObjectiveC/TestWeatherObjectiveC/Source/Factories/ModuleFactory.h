@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ViewHeaders.h"
 
 @interface ModuleFactory : NSObject
+
+-(WeatherViewController *) createWeatherViewModule;
 
 @end

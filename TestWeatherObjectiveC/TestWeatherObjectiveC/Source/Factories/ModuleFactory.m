@@ -10,4 +10,9 @@
 
 @implementation ModuleFactory
 
+-(WeatherViewController *) createWeatherViewModule {
+    WeatherViewController *viewController = [[WeatherViewController alloc]initWithNibName:@"WeatherViewController" bundle:nil];
+    return viewController;
+}
+
 @end

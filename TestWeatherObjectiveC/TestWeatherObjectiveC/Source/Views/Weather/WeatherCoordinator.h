@@ -1,5 +1,5 @@
 //
-//  AppCoordinator.h
+//  WeatherCoordinator.h
 //  TestWeatherObjectiveC
 //
 //  Created by Gines Sanchez Merono on 2020-04-17.
@@ -10,15 +10,16 @@
 #import "Coordinating.h"
 #import "AppContext.h"
 
-@protocol AppCoordinatorType <Coordinating>
+@protocol WeatherCoordinatorType <Coordinating>
 
 @property (nonatomic) id<AppContextType> appContext;
 
-+ (instancetype)appCoordinatorWithAppContext:(id<AppContextType>) appContext;
++(instancetype) weatherCoordinatorWithAppContext: (id<AppContextType>) appContext;
 
 @end
 
-@interface AppCoordinator: NSObject <AppCoordinatorType>
+@interface WeatherCoordinator : NSObject <WeatherCoordinatorType>
 
 @end
+
 

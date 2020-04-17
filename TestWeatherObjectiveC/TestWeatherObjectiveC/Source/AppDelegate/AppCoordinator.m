@@ -7,6 +7,13 @@
 //
 
 #import "AppCoordinator.h"
+#import "WeatherCoordinator.h"
+
+@interface AppCoordinator ()
+
+@property (nonatomic, retain) WeatherCoordinator *weatherCoordinator;
+
+@end
 
 @implementation AppCoordinator
 
@@ -21,7 +28,8 @@
 }
 
 - (void)start {
-    //TODO:
+    self.weatherCoordinator = [WeatherCoordinator weatherCoordinatorWithAppContext: self.appContext];
+    [self.weatherCoordinator start];
 }
 
 - (void)stop {
