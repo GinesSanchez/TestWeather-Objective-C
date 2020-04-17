@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7538AC142449F39900E367E6 /* MockNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC132449F39900E367E6 /* MockNetworkManager.m */; };
+		7538AC1B244A057D00E367E6 /* AppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC1A244A057D00E367E6 /* AppContext.m */; };
+		7538AC1E244A05B800E367E6 /* AppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC1D244A05B800E367E6 /* AppCoordinator.m */; };
+		7538AC27244A0E7400E367E6 /* ModuleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC26244A0E7400E367E6 /* ModuleFactory.m */; };
 		75DB9F252448971000A89871 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F242448971000A89871 /* AppDelegate.m */; };
 		75DB9F282448971000A89871 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F272448971000A89871 /* SceneDelegate.m */; };
 		75DB9F2B2448971000A89871 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9F2A2448971000A89871 /* ViewController.m */; };
@@ -43,6 +46,13 @@
 /* Begin PBXFileReference section */
 		7538AC122449F39900E367E6 /* MockNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockNetworkManager.h; sourceTree = "<group>"; };
 		7538AC132449F39900E367E6 /* MockNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockNetworkManager.m; sourceTree = "<group>"; };
+		7538AC18244A053E00E367E6 /* Coordinating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinating.h; sourceTree = "<group>"; };
+		7538AC19244A057D00E367E6 /* AppContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppContext.h; sourceTree = "<group>"; };
+		7538AC1A244A057D00E367E6 /* AppContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppContext.m; sourceTree = "<group>"; };
+		7538AC1C244A05B800E367E6 /* AppCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCoordinator.h; sourceTree = "<group>"; };
+		7538AC1D244A05B800E367E6 /* AppCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCoordinator.m; sourceTree = "<group>"; };
+		7538AC25244A0E7400E367E6 /* ModuleFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleFactory.h; sourceTree = "<group>"; };
+		7538AC26244A0E7400E367E6 /* ModuleFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModuleFactory.m; sourceTree = "<group>"; };
 		75DB9F202448971000A89871 /* TestWeatherObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWeatherObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DB9F232448971000A89871 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		75DB9F242448971000A89871 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -102,6 +112,30 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		7538AC17244A052D00E367E6 /* CommonProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				7538AC18244A053E00E367E6 /* Coordinating.h */,
+			);
+			path = CommonProtocols;
+			sourceTree = "<group>";
+		};
+		7538AC1F244A06CA00E367E6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7538AC24244A0E4600E367E6 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				7538AC25244A0E7400E367E6 /* ModuleFactory.h */,
+				7538AC26244A0E7400E367E6 /* ModuleFactory.m */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		75DB9F172448971000A89871 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +187,8 @@
 		75DB9F4B2448999000A89871 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7538AC24244A0E4600E367E6 /* Factories */,
+				7538AC17244A052D00E367E6 /* CommonProtocols */,
 				75DB9F4F24489A9700A89871 /* Managers */,
 				75DB9F4E24489A0400A89871 /* Views */,
 				75DB9F4C244899A100A89871 /* AppDelegate */,
@@ -163,10 +199,15 @@
 		75DB9F4C244899A100A89871 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				7538AC1F244A06CA00E367E6 /* Protocols */,
 				75DB9F232448971000A89871 /* AppDelegate.h */,
 				75DB9F242448971000A89871 /* AppDelegate.m */,
 				75DB9F262448971000A89871 /* SceneDelegate.h */,
 				75DB9F272448971000A89871 /* SceneDelegate.m */,
+				7538AC19244A057D00E367E6 /* AppContext.h */,
+				7538AC1A244A057D00E367E6 /* AppContext.m */,
+				7538AC1C244A05B800E367E6 /* AppCoordinator.h */,
+				7538AC1D244A05B800E367E6 /* AppCoordinator.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -385,6 +426,9 @@
 			files = (
 				75DB9F2B2448971000A89871 /* ViewController.m in Sources */,
 				75DB9F252448971000A89871 /* AppDelegate.m in Sources */,
+				7538AC27244A0E7400E367E6 /* ModuleFactory.m in Sources */,
+				7538AC1E244A05B800E367E6 /* AppCoordinator.m in Sources */,
+				7538AC1B244A057D00E367E6 /* AppContext.m in Sources */,
 				75DB9F362448971200A89871 /* main.m in Sources */,
 				75DB9F5424489DEF00A89871 /* NetworkManager.m in Sources */,
 				75DB9F712448D8CA00A89871 /* NSError+WeatherManager.m in Sources */,
