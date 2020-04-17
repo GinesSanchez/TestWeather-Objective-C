@@ -120,13 +120,6 @@
 			path = CommonProtocols;
 			sourceTree = "<group>";
 		};
-		7538AC1F244A06CA00E367E6 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		7538AC24244A0E4600E367E6 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,7 +192,6 @@
 		75DB9F4C244899A100A89871 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				7538AC1F244A06CA00E367E6 /* Protocols */,
 				75DB9F232448971000A89871 /* AppDelegate.h */,
 				75DB9F242448971000A89871 /* AppDelegate.m */,
 				75DB9F262448971000A89871 /* SceneDelegate.h */,
