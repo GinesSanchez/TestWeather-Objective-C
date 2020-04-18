@@ -33,6 +33,12 @@
     return weatherCoordinator;
 }
 
+-(void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver: self
+                                                    name: kUpdateEvent
+                                                    object: nil];
+}
+
 - (void)start {
     self.event = started;
 }
