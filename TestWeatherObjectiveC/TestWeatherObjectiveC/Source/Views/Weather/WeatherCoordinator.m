@@ -102,7 +102,7 @@
             if (self.state == none) self.state = start;
             break;
         case weatherViewPresented:
-            if (self.state == start) self.state = presentingWeatherView;
+            if (self.state == start || self.state == tappingGoBackButton) self.state = presentingWeatherView;
             break;
         case tapMeButtonTapped:
             if (self.state == presentingWeatherView) self.state = tappingTapMeButton;

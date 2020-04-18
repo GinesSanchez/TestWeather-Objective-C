@@ -26,6 +26,10 @@
     [super viewDidLoad];
 
     [self setUp];
+}
+
+-(void) viewWillAppear: (BOOL)animated {
+    [super viewWillAppear: animated];
     [self.viewModel viewLoaded];
 }
 
