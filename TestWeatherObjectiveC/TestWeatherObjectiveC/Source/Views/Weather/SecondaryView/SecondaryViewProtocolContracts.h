@@ -11,6 +11,9 @@
 @protocol SecondaryViewModelDelegate <NSObject>
 
 -(void) viewLoaded;
+-(void) goBackButtonTapped;
+
+-(NSString *) goBackButtonTitle;
 
 @end
 

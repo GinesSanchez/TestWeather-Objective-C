@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondaryViewController">
             <connections>
+                <outlet property="goBackButton" destination="hnc-A1-ZBf" id="hmm-9p-ism"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,7 +17,28 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.92941176469999998" green="0.41568627450000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnc-A1-ZBf">
+                    <rect key="frame" x="103.5" y="349.5" width="207" height="207"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="hnc-A1-ZBf" secondAttribute="height" multiplier="1:1" id="cdF-O7-64u"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <state key="normal" title="_Tap Me!">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="goBackButtonTapped:" destination="-1" eventType="touchUpInside" id="k8O-zE-HGv"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hnc-A1-ZBf" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="92A-d1-kwB"/>
+                <constraint firstItem="hnc-A1-ZBf" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="anS-sf-mxc"/>
+                <constraint firstItem="hnc-A1-ZBf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="xRk-DZ-CZN"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="139" y="145"/>
         </view>

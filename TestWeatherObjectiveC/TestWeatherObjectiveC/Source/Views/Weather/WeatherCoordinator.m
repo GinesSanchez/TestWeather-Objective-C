@@ -83,6 +83,9 @@
             break;
         case presentingSecondaryView:
             break;
+        case tappingGoBackButton:
+            [self.navigationController popViewControllerAnimated: YES];
+            break;
         case stop: {
             [navigationController popViewControllerAnimated: YES];
             self.weatherViewController = nil;
@@ -106,6 +109,9 @@
             break;
         case secondaryViewPresented:
             if (self.state == tappingTapMeButton) self.state = presentingSecondaryView;
+            break;
+        case goBackButtonTapped:
+            if (self.state == presentingSecondaryView) self.state = tappingGoBackButton;
             break;
         case stopped:
             self.state = stop;

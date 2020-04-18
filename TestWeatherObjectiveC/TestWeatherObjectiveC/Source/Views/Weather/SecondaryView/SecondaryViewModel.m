@@ -21,8 +21,17 @@
     return self;
 }
 
+//MARK: - SecondaryViewModelDelegate
 - (void)viewLoaded {
     [self notifyEvent: secondaryViewPresented];
+}
+
+-(void) goBackButtonTapped {
+    [self notifyEvent: goBackButtonTapped];
+}
+
+-(NSString *) goBackButtonTitle {
+    return @"Go Back!";
 }
 
 //MARK: - Private methods

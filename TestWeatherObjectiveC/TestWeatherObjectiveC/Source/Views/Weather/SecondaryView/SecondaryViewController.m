@@ -10,6 +10,8 @@
 
 @interface SecondaryViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *goBackButton;
+
 @end
 
 @implementation SecondaryViewController
@@ -17,7 +19,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self setUp];
     [self.viewModel viewLoaded];
 }
+
+//MARK: - Helper methods
+-(void) setUp {
+    [self setUpButtons];
+}
+
+-(void) setUpButtons {
+    [self.goBackButton setTitle: [self.viewModel goBackButtonTitle] forState: UIControlStateNormal];
+    [self.goBackButton setBackgroundImage: [UIImage imageNamed: @"blueCircleImage"] forState: UIControlStateNormal];
+}
+
+
+//MARK: - IBActions
+- (IBAction)goBackButtonTapped:(id)sender {
+    [self.viewModel goBackButtonTapped];
+}
+
 
 @end
