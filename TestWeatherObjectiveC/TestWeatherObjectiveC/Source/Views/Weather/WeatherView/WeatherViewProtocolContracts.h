@@ -11,6 +11,7 @@
 @protocol WeatherViewModelDelegate <NSObject>
 
 -(void) viewLoaded;
+-(void) tapMeButtonTapped;
 -(NSString *) titleText;
 -(NSString *) tapMeButtonTitle;
 -(NSString *) cityWeatherInfo;

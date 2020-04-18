@@ -48,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		751A22C3244B021400CC7D64 /* WeatherCoordinatorState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCoordinatorState.h; sourceTree = "<group>"; };
 		7538AC122449F39900E367E6 /* MockNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockNetworkManager.h; sourceTree = "<group>"; };
 		7538AC132449F39900E367E6 /* MockNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockNetworkManager.m; sourceTree = "<group>"; };
 		7538AC18244A053E00E367E6 /* Coordinating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinating.h; sourceTree = "<group>"; };
@@ -163,6 +164,7 @@
 				7538AC2A244A119000E367E6 /* WeatherViewController.m */,
 				7538AC2B244A119000E367E6 /* WeatherViewController.xib */,
 				7538AC38244A1AFB00E367E6 /* WeatherViewProtocolContracts.h */,
+				751A22C3244B021400CC7D64 /* WeatherCoordinatorState.h */,
 			);
 			path = WeatherView;
 			sourceTree = "<group>";

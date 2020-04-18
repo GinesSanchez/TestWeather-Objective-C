@@ -8,6 +8,7 @@
 
 #import "WeatherViewModel.h"
 #import "ViewModelState.h"
+#import "WeatherCoordinatorState.h"
 
 @interface WeatherViewModel ()
 
@@ -55,7 +56,12 @@
 
 //MARK: - WeatherViewModelDelegate
 - (void) viewLoaded {
+    [self notifyEvent: weatherViewPresented];
     [self getCityInformation];
+}
+
+-(void) tapMeButtonTapped {
+    [self notifyEvent: tapMeButtonTapped];
 }
 
 -(NSString *) titleText {
@@ -89,6 +95,12 @@
             self.requestError = error;
         }
     }];
+}
+
+-(void) notifyEvent: (WeatherCoordinatorEvent) event {
+    NSNumber *numberEvent = [NSNumber numberWithInt: (int)event];
+    NSDictionary *userInfo = @{ @"event": numberEvent };
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"UpdateWeatherCoordinatorStateMachine" object:nil userInfo:userInfo];
 }
 
 @end

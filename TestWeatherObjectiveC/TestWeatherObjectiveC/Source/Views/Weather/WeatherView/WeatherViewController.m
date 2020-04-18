@@ -34,6 +34,12 @@
     [self reloadView];
 }
 
+//MARK: - IBActions
+- (IBAction)tapMeButtonTapped:(id)sender {
+    [self.viewModel tapMeButtonTapped];
+}
+
+
 //MARK: - Helper methods
 -(void) setUp {
     [self setUpLabels];

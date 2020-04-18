@@ -7,10 +7,13 @@
 //
 
 #import "WeatherCoordinator.h"
+#import "WeatherCoordinatorState.h"
 
 @interface WeatherCoordinator ()
 
 @property (nonatomic) WeatherViewController *weatherViewController;
+@property (nonatomic) WeatherCoordinatorState state;
+@property (nonatomic) WeatherCoordinatorEvent event;
 
 @end
 
@@ -23,19 +26,84 @@
     WeatherCoordinator *weatherCoordinator = [WeatherCoordinator new];
     weatherCoordinator.navigationController = appContext.navigationController;
     weatherCoordinator.appContext = appContext;
+    weatherCoordinator.state = none;
+    weatherCoordinator.event = none;
+    [weatherCoordinator observeState];
     return weatherCoordinator;
 }
 
-
 - (void)start {
-    self.weatherViewController = [self.appContext.moduleFactory createWeatherViewModuleWithWeatherManager: self.appContext.weatherManager];
-    [self.navigationController pushViewController: self.weatherViewController animated: YES];
+    self.event = started;
 }
 
 - (void)stop {
-    [navigationController popViewControllerAnimated: YES];
-    self.weatherViewController = nil;
+    self.event = stopped;
 }
 
+//MARK: - didSet
+-(void) setState: (WeatherCoordinatorState)state {
+    _state = state;
+    [self setNextActionWithState: state];
+}
+
+-(void) setEvent: (WeatherCoordinatorEvent)event {
+    _event = event;
+    [self updateStateWithEvent: event];
+}
+
+//MARK: - State Machine
+-(void) observeState {
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(updateEventWithNotification:)
+                                                 name: @"UpdateWeatherCoordinatorStateMachine"
+                                               object: nil];
+}
+
+-(void) updateEventWithNotification: (NSNotification*)notification {
+    if ([[notification name] isEqualToString: @"UpdateWeatherCoordinatorStateMachine"]) {
+        self.event = [notification.userInfo[@"event"] intValue];
+    }
+}
+
+-(void) setNextActionWithState: (WeatherCoordinatorState) state {
+    switch (self.state) {
+        case none:
+            break;
+        case start: {
+            self.weatherViewController = [self.appContext.moduleFactory createWeatherViewModuleWithWeatherManager: self.appContext.weatherManager];
+            [self.navigationController pushViewController: self.weatherViewController animated: YES];
+            break;
+        }
+        case presentingWeatherView:
+            break;
+        case tappingTapMeButton:
+            NSLog(@"Create secundary view and push it");
+            break;
+        case stop: {
+            [navigationController popViewControllerAnimated: YES];
+            self.weatherViewController = nil;
+            break;
+        }
+    }
+}
+
+-(void) updateStateWithEvent: (WeatherCoordinatorEvent) event {
+    switch (self.event) {
+        case noned:
+            break;
+        case started:
+            if (self.state == none) self.state = start;
+            break;
+        case weatherViewPresented:
+            if (self.state == start) self.state = presentingWeatherView;
+            break;
+        case tapMeButtonTapped:
+            if (self.state == presentingWeatherView) self.state = tappingTapMeButton;
+            break;
+        case stopped:
+            self.state = stop;
+            break;
+    }
+}
 
 @end
