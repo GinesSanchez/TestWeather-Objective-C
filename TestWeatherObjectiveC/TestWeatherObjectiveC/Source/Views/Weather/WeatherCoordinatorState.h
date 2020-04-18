@@ -6,6 +6,8 @@
 //  Copyright © 2020 Ginés Sanchez. All rights reserved.
 //
 
+#import "StateMachineConstants.h"
+
 typedef NS_ENUM(NSInteger, WeatherCoordinatorState) {
     none,
     start,

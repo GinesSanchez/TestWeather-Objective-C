@@ -37,8 +37,8 @@
 //MARK: - Private methods
 -(void) notifyEvent: (WeatherCoordinatorEvent) event {
     NSNumber *numberEvent = [NSNumber numberWithInt: (int)event];
-    NSDictionary *userInfo = @{ @"event": numberEvent };
-    [[NSNotificationCenter defaultCenter] postNotificationName: @"UpdateWeatherCoordinatorStateMachine" object:nil userInfo:userInfo];
+    NSDictionary *userInfo = @{ kEvent: numberEvent };
+    [[NSNotificationCenter defaultCenter] postNotificationName: kUpdateEvent object:nil userInfo:userInfo];
 }
 
 @end

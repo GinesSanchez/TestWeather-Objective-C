@@ -53,7 +53,7 @@
     [self setNextActionWithState: state];
 }
 
--(void) setEvent: (WeatherCoordinatorEvent)event {
+-(void) setEvent: (WeatherCoordinatorEvent) event {
     _event = event;
     [self updateStateWithEvent: event];
 }
@@ -62,13 +62,13 @@
 -(void) observeState {
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(updateEventWithNotification:)
-                                                 name: @"UpdateWeatherCoordinatorStateMachine"
+                                                 name: kUpdateEvent
                                                object: nil];
 }
 
 -(void) updateEventWithNotification: (NSNotification*)notification {
-    if ([[notification name] isEqualToString: @"UpdateWeatherCoordinatorStateMachine"]) {
-        self.event = [notification.userInfo[@"event"] intValue];
+    if ([[notification name] isEqualToString: kUpdateEvent]) {
+        self.event = [notification.userInfo[kEvent] intValue];
     }
 }
 

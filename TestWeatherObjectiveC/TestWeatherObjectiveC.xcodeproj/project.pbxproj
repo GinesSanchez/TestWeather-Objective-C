@@ -58,6 +58,7 @@
 		751A22CA244B1B6000CC7D64 /* SecondaryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondaryViewModel.h; sourceTree = "<group>"; };
 		751A22CB244B1B6000CC7D64 /* SecondaryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondaryViewModel.m; sourceTree = "<group>"; };
 		751A22CD244B1B8900CC7D64 /* SecondaryViewProtocolContracts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondaryViewProtocolContracts.h; sourceTree = "<group>"; };
+		751A22CF244B459C00CC7D64 /* StateMachineConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateMachineConstants.h; sourceTree = "<group>"; };
 		7538AC122449F39900E367E6 /* MockNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockNetworkManager.h; sourceTree = "<group>"; };
 		7538AC132449F39900E367E6 /* MockNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockNetworkManager.m; sourceTree = "<group>"; };
 		7538AC18244A053E00E367E6 /* Coordinating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinating.h; sourceTree = "<group>"; };
@@ -138,6 +139,14 @@
 				751A22CD244B1B8900CC7D64 /* SecondaryViewProtocolContracts.h */,
 			);
 			path = SecondaryView;
+			sourceTree = "<group>";
+		};
+		751A22CE244B458100CC7D64 /* Contants */ = {
+			isa = PBXGroup;
+			children = (
+				751A22CF244B459C00CC7D64 /* StateMachineConstants.h */,
+			);
+			path = Contants;
 			sourceTree = "<group>";
 		};
 		7538AC112449F37800E367E6 /* Mocks */ = {
@@ -251,6 +260,7 @@
 		75DB9F4B2448999000A89871 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				751A22CE244B458100CC7D64 /* Contants */,
 				7538AC39244A271F00E367E6 /* StateEnums */,
 				7538AC17244A052D00E367E6 /* Protocols */,
 				75DB9F4F24489A9700A89871 /* Managers */,
