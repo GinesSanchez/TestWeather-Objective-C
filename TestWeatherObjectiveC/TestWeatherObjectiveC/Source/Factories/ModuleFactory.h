@@ -13,5 +13,6 @@
 @interface ModuleFactory : NSObject
 
 -(WeatherViewController *) createWeatherViewModuleWithWeatherManager: (id <WeatherManagerType>) weatherManager;
+-(SecondaryViewController *) createSecondaryViewModule;
 
 @end

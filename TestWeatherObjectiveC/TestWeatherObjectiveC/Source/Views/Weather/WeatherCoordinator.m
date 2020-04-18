@@ -12,6 +12,7 @@
 @interface WeatherCoordinator ()
 
 @property (nonatomic) WeatherViewController *weatherViewController;
+@property (nonatomic) SecondaryViewController *secondaryViewController;
 @property (nonatomic) WeatherCoordinatorState state;
 @property (nonatomic) WeatherCoordinatorEvent event;
 
@@ -77,7 +78,10 @@
         case presentingWeatherView:
             break;
         case tappingTapMeButton:
-            NSLog(@"Create secundary view and push it");
+            self.secondaryViewController = [self.appContext.moduleFactory createSecondaryViewModule];
+            [self.navigationController pushViewController: self.secondaryViewController animated: YES];
+            break;
+        case presentingSecondaryView:
             break;
         case stop: {
             [navigationController popViewControllerAnimated: YES];
@@ -99,6 +103,9 @@
             break;
         case tapMeButtonTapped:
             if (self.state == presentingWeatherView) self.state = tappingTapMeButton;
+            break;
+        case secondaryViewPresented:
+            if (self.state == tappingTapMeButton) self.state = presentingSecondaryView;
             break;
         case stopped:
             self.state = stop;

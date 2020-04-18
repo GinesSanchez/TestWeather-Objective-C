@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751A22C8244B1AAF00CC7D64 /* SecondaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751A22C6244B1AAF00CC7D64 /* SecondaryViewController.m */; };
+		751A22C9244B1AAF00CC7D64 /* SecondaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751A22C7244B1AAF00CC7D64 /* SecondaryViewController.xib */; };
+		751A22CC244B1B6000CC7D64 /* SecondaryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 751A22CB244B1B6000CC7D64 /* SecondaryViewModel.m */; };
 		7538AC142449F39900E367E6 /* MockNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC132449F39900E367E6 /* MockNetworkManager.m */; };
 		7538AC1B244A057D00E367E6 /* AppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC1A244A057D00E367E6 /* AppContext.m */; };
 		7538AC1E244A05B800E367E6 /* AppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC1D244A05B800E367E6 /* AppCoordinator.m */; };
@@ -49,6 +52,12 @@
 
 /* Begin PBXFileReference section */
 		751A22C3244B021400CC7D64 /* WeatherCoordinatorState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCoordinatorState.h; sourceTree = "<group>"; };
+		751A22C5244B1AAF00CC7D64 /* SecondaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondaryViewController.h; sourceTree = "<group>"; };
+		751A22C6244B1AAF00CC7D64 /* SecondaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondaryViewController.m; sourceTree = "<group>"; };
+		751A22C7244B1AAF00CC7D64 /* SecondaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondaryViewController.xib; sourceTree = "<group>"; };
+		751A22CA244B1B6000CC7D64 /* SecondaryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondaryViewModel.h; sourceTree = "<group>"; };
+		751A22CB244B1B6000CC7D64 /* SecondaryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondaryViewModel.m; sourceTree = "<group>"; };
+		751A22CD244B1B8900CC7D64 /* SecondaryViewProtocolContracts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondaryViewProtocolContracts.h; sourceTree = "<group>"; };
 		7538AC122449F39900E367E6 /* MockNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockNetworkManager.h; sourceTree = "<group>"; };
 		7538AC132449F39900E367E6 /* MockNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockNetworkManager.m; sourceTree = "<group>"; };
 		7538AC18244A053E00E367E6 /* Coordinating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinating.h; sourceTree = "<group>"; };
@@ -118,6 +127,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		751A22C4244B1A8300CC7D64 /* SecondaryView */ = {
+			isa = PBXGroup;
+			children = (
+				751A22CA244B1B6000CC7D64 /* SecondaryViewModel.h */,
+				751A22CB244B1B6000CC7D64 /* SecondaryViewModel.m */,
+				751A22C5244B1AAF00CC7D64 /* SecondaryViewController.h */,
+				751A22C6244B1AAF00CC7D64 /* SecondaryViewController.m */,
+				751A22C7244B1AAF00CC7D64 /* SecondaryViewController.xib */,
+				751A22CD244B1B8900CC7D64 /* SecondaryViewProtocolContracts.h */,
+			);
+			path = SecondaryView;
+			sourceTree = "<group>";
+		};
 		7538AC112449F37800E367E6 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +172,9 @@
 			children = (
 				7538AC2E244A128400E367E6 /* WeatherCoordinator.h */,
 				7538AC2F244A128400E367E6 /* WeatherCoordinator.m */,
+				751A22C3244B021400CC7D64 /* WeatherCoordinatorState.h */,
 				7538AC31244A12EF00E367E6 /* WeatherView */,
+				751A22C4244B1A8300CC7D64 /* SecondaryView */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -164,7 +188,6 @@
 				7538AC2A244A119000E367E6 /* WeatherViewController.m */,
 				7538AC2B244A119000E367E6 /* WeatherViewController.xib */,
 				7538AC38244A1AFB00E367E6 /* WeatherViewProtocolContracts.h */,
-				751A22C3244B021400CC7D64 /* WeatherCoordinatorState.h */,
 			);
 			path = WeatherView;
 			sourceTree = "<group>";
@@ -449,6 +472,7 @@
 				75DB9F332448971200A89871 /* LaunchScreen.storyboard in Resources */,
 				7538AC2D244A119000E367E6 /* WeatherViewController.xib in Resources */,
 				75DB9F302448971200A89871 /* Assets.xcassets in Resources */,
+				751A22C9244B1AAF00CC7D64 /* SecondaryViewController.xib in Resources */,
 				75DB9F2E2448971000A89871 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,10 +494,12 @@
 				75DB9F2B2448971000A89871 /* ViewController.m in Sources */,
 				7538AC2C244A119000E367E6 /* WeatherViewController.m in Sources */,
 				75DB9F252448971000A89871 /* AppDelegate.m in Sources */,
+				751A22CC244B1B6000CC7D64 /* SecondaryViewModel.m in Sources */,
 				7538AC27244A0E7400E367E6 /* ModuleFactory.m in Sources */,
 				7538AC1E244A05B800E367E6 /* AppCoordinator.m in Sources */,
 				7538AC35244A18B800E367E6 /* WeatherViewModel.m in Sources */,
 				7538AC1B244A057D00E367E6 /* AppContext.m in Sources */,
+				751A22C8244B1AAF00CC7D64 /* SecondaryViewController.m in Sources */,
 				75DB9F362448971200A89871 /* main.m in Sources */,
 				75DB9F5424489DEF00A89871 /* NetworkManager.m in Sources */,
 				75DB9F712448D8CA00A89871 /* NSError+WeatherManager.m in Sources */,

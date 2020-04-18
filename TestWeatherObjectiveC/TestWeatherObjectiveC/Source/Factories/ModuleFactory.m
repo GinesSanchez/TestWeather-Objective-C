@@ -17,4 +17,11 @@
     return viewController;
 }
 
+-(SecondaryViewController *) createSecondaryViewModule {
+    SecondaryViewController *viewController = [[SecondaryViewController alloc]initWithNibName: @"SecondaryViewController" bundle:nil];
+    SecondaryViewModel *viewModel = [[SecondaryViewModel alloc] initWithViewControllerDelegate: viewController];
+    viewController.viewModel = viewModel;
+    return viewController;
+}
+
 @end

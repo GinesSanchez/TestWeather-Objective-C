@@ -11,6 +11,7 @@ typedef NS_ENUM(NSInteger, WeatherCoordinatorState) {
     start,
     presentingWeatherView,
     tappingTapMeButton,
+    presentingSecondaryView,
     stop
 };
 
@@ -19,5 +20,6 @@ typedef NS_ENUM(NSInteger, WeatherCoordinatorEvent) {
     started,
     weatherViewPresented,
     tapMeButtonTapped,
+    secondaryViewPresented,
     stopped
 };
