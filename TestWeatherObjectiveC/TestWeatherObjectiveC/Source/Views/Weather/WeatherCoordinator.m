@@ -15,6 +15,7 @@
 @property (nonatomic) SecondaryViewController *secondaryViewController;
 @property (nonatomic) WeatherCoordinatorState state;
 @property (nonatomic) WeatherCoordinatorEvent event;
+@property (nonatomic) dispatch_queue_t serialQueue;
 
 @end
 
@@ -25,10 +26,13 @@
 
 + (instancetype)weatherCoordinatorWithAppContext:(id<AppContextType>)appContext {
     WeatherCoordinator *weatherCoordinator = [WeatherCoordinator new];
+
     weatherCoordinator.navigationController = appContext.navigationController;
     weatherCoordinator.appContext = appContext;
+    weatherCoordinator.serialQueue = dispatch_queue_create("com.weatherExample.SerialQueue", NULL);
     weatherCoordinator.state = none;
     weatherCoordinator.event = none;
+
     [weatherCoordinator observeState];
     return weatherCoordinator;
 }
@@ -73,56 +77,61 @@
 }
 
 -(void) setNextActionWithState: (WeatherCoordinatorState) state {
-    switch (self.state) {
-        case none:
-            break;
-        case start: {
-            self.weatherViewController = [self.appContext.moduleFactory createWeatherViewModuleWithWeatherManager: self.appContext.weatherManager];
-            [self.navigationController pushViewController: self.weatherViewController animated: YES];
-            break;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        switch (self.state) {
+            case none:
+                break;
+            case start: {
+                self.weatherViewController = [self.appContext.moduleFactory createWeatherViewModuleWithWeatherManager: self.appContext.weatherManager];
+                [self.navigationController pushViewController: self.weatherViewController animated: YES];
+                break;
+            }
+            case presentingWeatherView:
+                break;
+            case tappingTapMeButton:
+                self.secondaryViewController = [self.appContext.moduleFactory createSecondaryViewModule];
+                [self.navigationController pushViewController: self.secondaryViewController animated: YES];
+                break;
+            case presentingSecondaryView:
+                break;
+            case tappingGoBackButton:
+                [self.navigationController popViewControllerAnimated: YES];
+                break;
+            case stop: {
+                [self.navigationController popViewControllerAnimated: YES];
+                self.weatherViewController = nil;
+                break;
+            }
         }
-        case presentingWeatherView:
-            break;
-        case tappingTapMeButton:
-            self.secondaryViewController = [self.appContext.moduleFactory createSecondaryViewModule];
-            [self.navigationController pushViewController: self.secondaryViewController animated: YES];
-            break;
-        case presentingSecondaryView:
-            break;
-        case tappingGoBackButton:
-            [self.navigationController popViewControllerAnimated: YES];
-            break;
-        case stop: {
-            [navigationController popViewControllerAnimated: YES];
-            self.weatherViewController = nil;
-            break;
-        }
-    }
+    });
 }
 
 -(void) updateStateWithEvent: (WeatherCoordinatorEvent) event {
-    switch (self.event) {
-        case noned:
-            break;
-        case started:
-            if (self.state == none) self.state = start;
-            break;
-        case weatherViewPresented:
-            if (self.state == start || self.state == tappingGoBackButton) self.state = presentingWeatherView;
-            break;
-        case tapMeButtonTapped:
-            if (self.state == presentingWeatherView) self.state = tappingTapMeButton;
-            break;
-        case secondaryViewPresented:
-            if (self.state == tappingTapMeButton) self.state = presentingSecondaryView;
-            break;
-        case goBackButtonTapped:
-            if (self.state == presentingSecondaryView) self.state = tappingGoBackButton;
-            break;
-        case stopped:
-            self.state = stop;
-            break;
-    }
+    __weak WeatherCoordinator *weakSelf = self;
+    dispatch_sync(weakSelf.serialQueue, ^{
+        switch (weakSelf.event) {
+            case noned:
+                break;
+            case started:
+                if (weakSelf.state == none) weakSelf.state = start;
+                break;
+            case weatherViewPresented:
+                if (weakSelf.state == start || weakSelf.state == tappingGoBackButton) weakSelf.state = presentingWeatherView;
+                break;
+            case tapMeButtonTapped:
+                if (weakSelf.state == presentingWeatherView) weakSelf.state = tappingTapMeButton;
+                break;
+            case secondaryViewPresented:
+                if (weakSelf.state == tappingTapMeButton) weakSelf.state = presentingSecondaryView;
+                break;
+            case goBackButtonTapped:
+                if (weakSelf.state == presentingSecondaryView) weakSelf.state = tappingGoBackButton;
+                break;
+            case stopped:
+                self.state = stop;
+                break;
+        }
+    });
 }
 
 @end
