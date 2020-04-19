@@ -15,7 +15,7 @@
 
 @property (nonatomic) id<AppContextType> appContext;
 
-+(instancetype) weatherCoordinatorWithAppContext: (id<AppContextType>) appContext;
+-(instancetype) initWeatherCoordinatorWithAppContext: (id<AppContextType>)appContext;
 
 @end
 

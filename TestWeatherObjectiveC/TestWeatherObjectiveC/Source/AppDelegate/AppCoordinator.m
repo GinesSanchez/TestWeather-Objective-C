@@ -28,7 +28,7 @@
 }
 
 - (void)start {
-    self.weatherCoordinator = [WeatherCoordinator weatherCoordinatorWithAppContext: self.appContext];
+    self.weatherCoordinator = [[WeatherCoordinator alloc] initWeatherCoordinatorWithAppContext: self.appContext];
     [self.weatherCoordinator start];
 }
 

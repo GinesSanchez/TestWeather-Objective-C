@@ -11,6 +11,7 @@
 		751A22C9244B1AAF00CC7D64 /* SecondaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751A22C7244B1AAF00CC7D64 /* SecondaryViewController.xib */; };
 		751A22CC244B1B6000CC7D64 /* SecondaryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 751A22CB244B1B6000CC7D64 /* SecondaryViewModel.m */; };
 		751A22D4244B590C00CC7D64 /* WeatherCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC2F244A128400E367E6 /* WeatherCoordinator.m */; };
+		751A22D8244CC08900CC7D64 /* WeatherCoordinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 751A22D7244CC08900CC7D64 /* WeatherCoordinatorTests.m */; };
 		7538AC142449F39900E367E6 /* MockNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC132449F39900E367E6 /* MockNetworkManager.m */; };
 		7538AC1B244A057D00E367E6 /* AppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC1A244A057D00E367E6 /* AppContext.m */; };
 		7538AC1E244A05B800E367E6 /* AppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC1D244A05B800E367E6 /* AppCoordinator.m */; };
@@ -60,6 +61,7 @@
 		751A22CB244B1B6000CC7D64 /* SecondaryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondaryViewModel.m; sourceTree = "<group>"; };
 		751A22CD244B1B8900CC7D64 /* SecondaryViewProtocolContracts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondaryViewProtocolContracts.h; sourceTree = "<group>"; };
 		751A22CF244B459C00CC7D64 /* StateMachineConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateMachineConstants.h; sourceTree = "<group>"; };
+		751A22D7244CC08900CC7D64 /* WeatherCoordinatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WeatherCoordinatorTests.m; path = ../../../../../../../Documents/WeatherCoordinatorTests.m; sourceTree = "<group>"; };
 		7538AC122449F39900E367E6 /* MockNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockNetworkManager.h; sourceTree = "<group>"; };
 		7538AC132449F39900E367E6 /* MockNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockNetworkManager.m; sourceTree = "<group>"; };
 		7538AC18244A053E00E367E6 /* Coordinating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinating.h; sourceTree = "<group>"; };
@@ -148,6 +150,22 @@
 				751A22CF244B459C00CC7D64 /* StateMachineConstants.h */,
 			);
 			path = Contants;
+			sourceTree = "<group>";
+		};
+		751A22D5244CC06700CC7D64 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				751A22D6244CC07400CC7D64 /* Weather */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		751A22D6244CC07400CC7D64 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				751A22D7244CC08900CC7D64 /* WeatherCoordinatorTests.m */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 		7538AC112449F37800E367E6 /* Mocks */ = {
@@ -243,6 +261,7 @@
 		75DB9F3E2448971200A89871 /* TestWeatherObjectiveCTests */ = {
 			isa = PBXGroup;
 			children = (
+				751A22D5244CC06700CC7D64 /* Views */,
 				75DB9F562448A1A600A89871 /* Managers */,
 				75DB9F3F2448971200A89871 /* TestWeatherObjectiveCTests.m */,
 				75DB9F412448971200A89871 /* Info.plist */,
@@ -532,6 +551,7 @@
 				75DB9F632448B25300A89871 /* CityInfo.m in Sources */,
 				75DB9F762448DDAF00A89871 /* NSError+WeatherManager.m in Sources */,
 				75DB9F752448DD5300A89871 /* NSError+WeatherManagerTests.m in Sources */,
+				751A22D8244CC08900CC7D64 /* WeatherCoordinatorTests.m in Sources */,
 				75DB9F782448E08700A89871 /* WeatherManagerTests.m in Sources */,
 				75DB9F672448B51A00A89871 /* CityInfoTests.m in Sources */,
 				75DB9F402448971200A89871 /* TestWeatherObjectiveCTests.m in Sources */,

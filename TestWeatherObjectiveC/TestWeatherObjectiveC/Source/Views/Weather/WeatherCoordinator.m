@@ -19,16 +19,18 @@
 @synthesize appContext;
 @synthesize navigationController;
 
-+ (instancetype)weatherCoordinatorWithAppContext:(id<AppContextType>)appContext {
-    WeatherCoordinator *weatherCoordinator = [WeatherCoordinator new];
+-(instancetype) initWeatherCoordinatorWithAppContext: (id<AppContextType>)appContext {
+    self = [super init];
+    if (self) {
+        self.navigationController = appContext.navigationController;
+        self.appContext = appContext;
+        self.serialQueue = dispatch_queue_create("com.weatherExample.SerialQueue", NULL);
+        self.event = initiated;
 
-    weatherCoordinator.navigationController = appContext.navigationController;
-    weatherCoordinator.appContext = appContext;
-    weatherCoordinator.serialQueue = dispatch_queue_create("com.weatherExample.SerialQueue", NULL);
-    weatherCoordinator.event = initiated;
-
-    [weatherCoordinator observeState];
-    return weatherCoordinator;
+        [self observeEvent];
+        return self;
+    }
+    return nil;
 }
 
 -(void) dealloc {
@@ -57,7 +59,7 @@
 }
 
 //MARK: - State Machine
--(void) observeState {
+-(void) observeEvent {
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(updateEventWithNotification:)
                                                  name: kUpdateEvent
@@ -75,34 +77,26 @@
             case init:
                 break;
             case start: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.weatherViewController = [self.appContext.moduleFactory createWeatherViewModuleWithWeatherManager: self.appContext.weatherManager];
-                    [self.navigationController pushViewController: self.weatherViewController animated: YES];
-                });
+                self.weatherViewController = [self.appContext.moduleFactory createWeatherViewModuleWithWeatherManager: self.appContext.weatherManager];
+                [self.navigationController pushViewController: self.weatherViewController animated: YES];
             }
             break;
             case presentingWeatherView:
                 break;
             case tappingTapMeButton: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.secondaryViewController = [self.appContext.moduleFactory createSecondaryViewModule];
-                    [self.navigationController pushViewController: self.secondaryViewController animated: YES];
-                });
+                self.secondaryViewController = [self.appContext.moduleFactory createSecondaryViewModule];
+                [self.navigationController pushViewController: self.secondaryViewController animated: YES];
             }
             break;
             case presentingSecondaryView:
                 break;
             case tappingGoBackButton: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.navigationController popViewControllerAnimated: YES];
-                });
+                [self.navigationController popViewControllerAnimated: YES];
             }
             break;
             case stop: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.navigationController popViewControllerAnimated: YES];
-                    self.weatherViewController = nil;
-                });
+                [self.navigationController popViewControllerAnimated: YES];
+                self.weatherViewController = nil;
             }
             break;
         }
