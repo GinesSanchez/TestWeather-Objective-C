@@ -7,14 +7,9 @@
 //
 
 #import "WeatherCoordinator.h"
-#import "WeatherCoordinatorState.h"
 
 @interface WeatherCoordinator ()
 
-@property (nonatomic) WeatherViewController *weatherViewController;
-@property (nonatomic) SecondaryViewController *secondaryViewController;
-@property (nonatomic) WeatherCoordinatorState state;
-@property (nonatomic) WeatherCoordinatorEvent event;
 @property (nonatomic) dispatch_queue_t serialQueue;
 
 @end
@@ -30,8 +25,7 @@
     weatherCoordinator.navigationController = appContext.navigationController;
     weatherCoordinator.appContext = appContext;
     weatherCoordinator.serialQueue = dispatch_queue_create("com.weatherExample.SerialQueue", NULL);
-    weatherCoordinator.state = none;
-    weatherCoordinator.event = none;
+    weatherCoordinator.event = initiated;
 
     [weatherCoordinator observeState];
     return weatherCoordinator;
@@ -77,43 +71,51 @@
 }
 
 -(void) setNextActionWithState: (WeatherCoordinatorState) state {
-    dispatch_async(dispatch_get_main_queue(), ^{
         switch (self.state) {
-            case none:
+            case init:
                 break;
             case start: {
-                self.weatherViewController = [self.appContext.moduleFactory createWeatherViewModuleWithWeatherManager: self.appContext.weatherManager];
-                [self.navigationController pushViewController: self.weatherViewController animated: YES];
-                break;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.weatherViewController = [self.appContext.moduleFactory createWeatherViewModuleWithWeatherManager: self.appContext.weatherManager];
+                    [self.navigationController pushViewController: self.weatherViewController animated: YES];
+                });
             }
+            break;
             case presentingWeatherView:
                 break;
-            case tappingTapMeButton:
-                self.secondaryViewController = [self.appContext.moduleFactory createSecondaryViewModule];
-                [self.navigationController pushViewController: self.secondaryViewController animated: YES];
-                break;
+            case tappingTapMeButton: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.secondaryViewController = [self.appContext.moduleFactory createSecondaryViewModule];
+                    [self.navigationController pushViewController: self.secondaryViewController animated: YES];
+                });
+            }
+            break;
             case presentingSecondaryView:
                 break;
-            case tappingGoBackButton:
-                [self.navigationController popViewControllerAnimated: YES];
-                break;
-            case stop: {
-                [self.navigationController popViewControllerAnimated: YES];
-                self.weatherViewController = nil;
-                break;
+            case tappingGoBackButton: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated: YES];
+                });
             }
+            break;
+            case stop: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated: YES];
+                    self.weatherViewController = nil;
+                });
+            }
+            break;
         }
-    });
 }
 
 -(void) updateStateWithEvent: (WeatherCoordinatorEvent) event {
     __weak WeatherCoordinator *weakSelf = self;
     dispatch_sync(weakSelf.serialQueue, ^{
         switch (weakSelf.event) {
-            case noned:
-                break;
+            case initiated:
+                weakSelf.state = init;
             case started:
-                if (weakSelf.state == none) weakSelf.state = start;
+                if (weakSelf.state == init) weakSelf.state = start;
                 break;
             case weatherViewPresented:
                 if (weakSelf.state == start || weakSelf.state == tappingGoBackButton) weakSelf.state = presentingWeatherView;

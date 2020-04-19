@@ -9,7 +9,7 @@
 #import "StateMachineConstants.h"
 
 typedef NS_ENUM(NSInteger, WeatherCoordinatorState) {
-    none,
+    init,
     start,
     presentingWeatherView,
     tappingTapMeButton,
@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, WeatherCoordinatorState) {
 };
 
 typedef NS_ENUM(NSInteger, WeatherCoordinatorEvent) {
-    noned,
+    initiated,
     started,
     weatherViewPresented,
     tapMeButtonTapped,
