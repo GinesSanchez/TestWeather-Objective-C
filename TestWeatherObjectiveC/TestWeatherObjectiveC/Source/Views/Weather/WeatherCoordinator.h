@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Coordinating.h"
 #import "AppContext.h"
+#import "WeatherCoordinatorState.h"
 
 @protocol WeatherCoordinatorType <Coordinating>
 
@@ -19,6 +20,11 @@
 @end
 
 @interface WeatherCoordinator : NSObject <WeatherCoordinatorType>
+
+@property (nonatomic, retain) WeatherViewController *weatherViewController;
+@property (nonatomic, retain) SecondaryViewController *secondaryViewController;
+@property (nonatomic) WeatherCoordinatorState state;
+@property (nonatomic) WeatherCoordinatorEvent event;
 
 @end
 

@@ -10,6 +10,7 @@
 		751A22C8244B1AAF00CC7D64 /* SecondaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751A22C6244B1AAF00CC7D64 /* SecondaryViewController.m */; };
 		751A22C9244B1AAF00CC7D64 /* SecondaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751A22C7244B1AAF00CC7D64 /* SecondaryViewController.xib */; };
 		751A22CC244B1B6000CC7D64 /* SecondaryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 751A22CB244B1B6000CC7D64 /* SecondaryViewModel.m */; };
+		751A22D4244B590C00CC7D64 /* WeatherCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC2F244A128400E367E6 /* WeatherCoordinator.m */; };
 		7538AC142449F39900E367E6 /* MockNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC132449F39900E367E6 /* MockNetworkManager.m */; };
 		7538AC1B244A057D00E367E6 /* AppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC1A244A057D00E367E6 /* AppContext.m */; };
 		7538AC1E244A05B800E367E6 /* AppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7538AC1D244A05B800E367E6 /* AppCoordinator.m */; };
@@ -534,6 +535,7 @@
 				75DB9F782448E08700A89871 /* WeatherManagerTests.m in Sources */,
 				75DB9F672448B51A00A89871 /* CityInfoTests.m in Sources */,
 				75DB9F402448971200A89871 /* TestWeatherObjectiveCTests.m in Sources */,
+				751A22D4244B590C00CC7D64 /* WeatherCoordinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
